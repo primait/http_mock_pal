@@ -11,7 +11,8 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
     ```elixir
     def deps do
-      [{:http_mock_pal, "~> 0.1", only: :test}]
+      [{:http_mock_pal, "~> 0.1", only: :test}] # using phoenix < 1.4 or cowboy 1.x
+      [{:http_mock_pal, "~> 1.0", only: :test}] # using phoenix >= 1.4 or cowboy 2.x
     end
     ```
 
