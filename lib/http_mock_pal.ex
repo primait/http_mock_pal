@@ -29,7 +29,7 @@ defmodule HttpMockPal do
       end
     end)
     |> map(fn {router_module, port} ->
-      Plug.Adapters.Cowboy.child_spec(:http, router_module, [], port: port)
+      Plug.Cowboy.child_spec(scheme: :http, plug: router_module, options: [port: port])
     end)
   end
 end
